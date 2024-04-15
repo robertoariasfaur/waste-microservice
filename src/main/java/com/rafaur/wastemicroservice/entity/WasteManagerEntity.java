@@ -35,9 +35,9 @@ public class WasteManagerEntity  extends Waste implements Serializable {
 
     @OneToMany(mappedBy = "wasteManagerEntity", cascade={CascadeType.ALL},
             fetch = FetchType.LAZY)
-    @JsonBackReference
     @Column(insertable = false , name = "wasteCenterAuthorizationEntity")
     @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonBackReference
     private List<WasteCenterAuthorizationEntity>
             listOfWasteCenterAuthorization = new ArrayList<>();
 
