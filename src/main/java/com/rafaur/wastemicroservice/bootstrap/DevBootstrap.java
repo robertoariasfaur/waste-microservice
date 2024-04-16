@@ -26,7 +26,7 @@ import org.springframework.stereotype.Component;
         @Override
         public void onApplicationEvent(ContextRefreshedEvent event) {
 
-            init();
+            //init();
         }
 
         private void init() {

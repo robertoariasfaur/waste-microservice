@@ -17,7 +17,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "wasteManagerEntitys")
+@Table(name = "wasteManagerEntity")
 public class WasteManagerEntity  extends Waste implements Serializable {
     @Column(name = "Nombre", nullable = false)
     private String nombre;
