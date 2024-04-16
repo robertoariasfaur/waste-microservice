@@ -24,7 +24,7 @@ public class WasteCenterAuthorizationEntity implements Serializable{
     @Column(name = "Authorization")
     private String authorizationNumber;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "wasteManagerEntity_id",
             nullable = false, referencedColumnName = "Id")
     @NotFound(action = NotFoundAction.IGNORE)

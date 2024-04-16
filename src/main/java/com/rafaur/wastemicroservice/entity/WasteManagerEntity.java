@@ -17,7 +17,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "wasteManagerEntity")
+@Table(name = "wasteManagerEntitys")
 public class WasteManagerEntity  extends Waste implements Serializable {
     @Column(name = "Nombre", nullable = false)
     private String nombre;
@@ -25,16 +25,14 @@ public class WasteManagerEntity  extends Waste implements Serializable {
     @Column(name = "Nif", nullable = false)
     private String nif;
 
-    @OneToOne(mappedBy = "wasteManagerEntity",  fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "wasteManagerEntity",  fetch = FetchType.EAGER)
     @Fetch(FetchMode.JOIN)
     @JsonBackReference
     @JoinColumn(name = "wasteManagerEntity", nullable = false)
-    //@PrimaryKeyJoinColumn(name = "wasteManagerEntity")
     private WasteManagerAddressEntity wasteManagerEntity;
 
-
     @OneToMany(mappedBy = "wasteManagerEntity", cascade={CascadeType.ALL},
-            fetch = FetchType.LAZY)
+            fetch = FetchType.EAGER)
     @Column(insertable = false , name = "wasteCenterAuthorizationEntity")
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonBackReference

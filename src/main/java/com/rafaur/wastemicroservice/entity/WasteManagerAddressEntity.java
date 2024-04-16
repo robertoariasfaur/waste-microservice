@@ -18,8 +18,7 @@ public class WasteManagerAddressEntity extends Waste implements Serializable {
     @Column(name = "Direccion")
     private String direccion;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="wasteManagerEntity_id")
-//    @PrimaryKeyJoinColumn(name="WasteManagerEntity_Id")
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="wasteManagerEntitys_id")
     private WasteManagerEntity wasteManagerEntity;
 }
