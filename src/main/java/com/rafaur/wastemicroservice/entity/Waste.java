@@ -2,12 +2,14 @@ package com.rafaur.wastemicroservice.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.io.Serializable;
 import java.util.Date;
 
+@SuperBuilder
 @Getter
 @Setter
 @MappedSuperclass
@@ -17,7 +19,7 @@ import java.util.Date;
 public abstract class Waste implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id", unique = true, nullable = false)
+    @Column(name = "ID", unique = true, nullable = false, insertable=false)
     @Basic(fetch = FetchType.EAGER)
     private Long id;
 

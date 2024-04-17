@@ -12,13 +12,13 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "wasteManagerAddressEntity")
+@Table(name = "wasteManagerAddress")
 public class WasteManagerAddressEntity extends Waste implements Serializable {
 
     @Column(name = "Direccion")
     private String direccion;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "wasteManagerEntity")
     @JoinColumn(name="wasteManagerEntity_id")
     private WasteManagerEntity wasteManagerEntity;
 }
