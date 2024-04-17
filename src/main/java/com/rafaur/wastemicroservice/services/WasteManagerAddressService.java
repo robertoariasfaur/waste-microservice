@@ -24,7 +24,7 @@ public class WasteManagerAddressService {
     /**
      *
      * @param addressDTO
-     * @return ResponseEntity
+     * @return Long Id del Waste Manager Creado
      */
     public Long create (WasteManagerAddressDTO addressDTO) throws Exception{
 
@@ -34,7 +34,6 @@ public class WasteManagerAddressService {
     /**
      *
      * @param dto
-     * @return ResponseEntity
      */
     public void update( WasteManagerAddressDTO dto) throws Exception{
 
@@ -47,7 +46,7 @@ public class WasteManagerAddressService {
     /**
      *
      * @param addressId
-     * @return ResponseEntity
+     * @return WasteManagerAddressDTO
      */
     public WasteManagerAddressDTO findById(Long addressId) throws Exception{
 
@@ -66,7 +65,6 @@ public class WasteManagerAddressService {
     /**
      *
      * @param id
-     * @return ResponseEntity
      */
     public void deleteById(Long id) {
         this.repository.deleteById(id);
@@ -76,7 +74,6 @@ public class WasteManagerAddressService {
 
     /**
      *
-     * @return ResponseEntity
      */
     public void deleteAllWaste() {
         this.repository.deleteAll();
@@ -85,7 +82,7 @@ public class WasteManagerAddressService {
 
     /**
      *
-     * @return ResponseEntity
+     * @return List<WasteManagerAddressDTO>
      */
     public List<WasteManagerAddressDTO> findAllAddress() {
         List<WasteManagerAddressDTO> listDto = new LinkedList<>();

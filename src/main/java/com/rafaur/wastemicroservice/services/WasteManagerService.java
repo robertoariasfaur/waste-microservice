@@ -9,7 +9,6 @@ import com.rafaur.wastemicroservice.repository.WasteManagerAdressRepository;
 import com.rafaur.wastemicroservice.repository.WasteManagerRepository;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

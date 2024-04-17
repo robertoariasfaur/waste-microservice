@@ -23,6 +23,10 @@ public class WasteCenterAuthorizationService {
     @Autowired
     private ModelMapper mapper;
 
+    /**
+     *
+     * @return List<WasteCenterAuthorizationDTO>
+     */
     public List<WasteCenterAuthorizationDTO> findAll() {
 
         List<WasteCenterAuthorizationDTO> list = new LinkedList<>();
@@ -34,6 +38,11 @@ public class WasteCenterAuthorizationService {
         return list;
     }
 
+    /**
+     *
+     * @param id
+     * @return WasteCenterAuthorizationDTO
+     */
     public WasteCenterAuthorizationDTO findById(Long id) {
         return mapper.map(this.findByIdL(id), WasteCenterAuthorizationDTO.class);
     }
@@ -42,10 +51,19 @@ public class WasteCenterAuthorizationService {
         return repository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
+    /**
+     *
+     * @param dTO
+     * @return Long Id del waste creado
+     */
     public Long create (WasteCenterAuthorizationDTO dTO) throws Exception{
         return repository.save(mapper.map(dTO, WasteCenterAuthorizationEntity.class)).getId();
     }
 
+    /**
+     *
+     * @param dTO
+     */
 
     public void update( WasteCenterAuthorizationDTO dto) throws Exception{
 
@@ -59,7 +77,6 @@ public class WasteCenterAuthorizationService {
     /**
      *
      * @param id
-     * @return ResponseEntity<String>
      */
     public void deleteById(Long id) {
         this.repository.deleteById(id);
@@ -67,7 +84,6 @@ public class WasteCenterAuthorizationService {
 
     /**
      *
-     * @return ResponseEntity<String>
      */
     public void deleteAllWaste() {
         this.repository.deleteAll();
@@ -76,7 +92,7 @@ public class WasteCenterAuthorizationService {
 
     /**
      *
-     * @return ResponseEntity<List<WasteCenterAuthorizationDTO>>
+     * @return List<WasteCenterAuthorizationDTO>
      */
     public List<WasteCenterAuthorizationDTO> findAllAuthorization() {
 

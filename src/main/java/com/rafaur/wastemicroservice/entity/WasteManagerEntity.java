@@ -27,7 +27,7 @@ public class WasteManagerEntity  extends Waste implements Serializable {
     @Column(name = "Nif", nullable = false)
     private String nif;
 
-    @OneToOne(cascade = CascadeType.ALL,  fetch = FetchType.EAGER)// mappedBy = "wasteManagerEntity",
+    @OneToOne(cascade = CascadeType.ALL,  fetch = FetchType.LAZY)// mappedBy = "wasteManagerEntity",
     //@Fetch(FetchMode.JOIN)
     //@JsonBackReference
     @JoinColumn(name = "WasteManagerAddressEntity_id",referencedColumnName = "id",nullable = false)
